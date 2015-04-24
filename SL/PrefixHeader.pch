@@ -1,0 +1,55 @@
+//
+//  PrefixHeader.pch
+//  ShuLianNet
+//
+//  Created by SD0025A on 15/4/3.
+//  Copyright (c) 2015年 邵兰霞. All rights reserved.
+//
+
+#ifndef ShuLianNet_PrefixHeader_pch
+#define ShuLianNet_PrefixHeader_pch
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "Base64.h"
+#import "NSString+MD5.h"
+#import "UIViewController+AllView.h"
+#import "UnityLHClass.h"
+#import "DataHander.h"
+#import "fashion.h"
+#import "UIImageView+WebCache.h"
+#import<SystemConfiguration/SystemConfiguration.h>
+#import<MobileCoreServices/MobileCoreServices.h>
+#import "AFHTTPRequestOperationManager.h"
+#import "SZTextView.h"
+
+//获取个人信息的接口
+//#define SLUser_DATA @"http://api.duc.cn/user/getJsonUserById?userId=132981"
+
+#define SLUser_DATA @"http://api.duc.cn/user/getJsonUserById"
+
+//修改昵称的接口
+#define SLEditUserName_DATA @"http://i.duc.cn/setting/setUserInfo?"
+
+//首页分类的接口
+#define SLSceen_DATA @"http://www.duc.cn/ios/category"
+
+//修改密码
+#define SLEditPWD_Request @"http://i.duc.cn/setting/updatePassword?"
+
+//单空间
+#define SLSpace_Request @"http://space.duc.cn/roomListConditionJson"
+
+//商品
+#define SLShop_Request @"http://goods.duc.cn/getParams"
+
+//模型
+#define SLModel_Request @"http://cloud.duc.cn/getParams"
+
+//360
+#define SLPanoramic_Request @"http://360.duc.cn/getParams"
+
+
+#endif

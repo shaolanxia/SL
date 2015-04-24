@@ -1,0 +1,448 @@
+//
+//  BMRequestManager.h
+//  UnityLH
+//
+//  Created by apple on 13-5-28.
+//  Copyright (c) 2013年 UnityLH. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "BMBaseManager.h"
+
+@interface BMRequestManager : BMBaseManager
+
++ (BMRequestManager*)shareBMRequestManager;
+
+-(void)cleanRequest;
+
+- (void)registerUser:(NSDictionary *)dataDic
+                        success:(void (^)(id responseDic))success
+                        failure:(void (^)(id errorString))failure;
+
+-(void)loginUser:(NSDictionary *)dataDic
+         success:(void (^)(id responseDic))success
+         failure:(void (^)(id errorString))failure;
+-(void)homePage:(NSDictionary *)dataDic
+        success:(void (^)(id responseDic))success
+        failure:(void (^)(id errorString))failure;
+
+//首页  /Advertisement/GetBondTransferList
+-(void)homPage:(NSDictionary *)dataDic
+       success:(void (^)(id responseDic))success
+       failure:(void (^)(id errorString))failure;
+
+//债券转让
+-(void)zhaiquanRequest:(NSDictionary *)dataDic
+             success:(void (^)(id responseDic))success
+             failure:(void (^)(id errorString))failure;
+
+//项目直投
+-(void)zhitouRequest:(NSDictionary *)dataDic
+             success:(void (^)(id responseDic))success
+             failure:(void (^)(id errorString))failure;
+
+//-(void)applyJoin :(NSDictionary *)dataDic
+//          success:(void (^)(id responseDic))success
+//          failure:(void (^)(id errorString))failure;
+
+-(void)Proclamation:(NSDictionary *)dataDic
+            success:(void (^)(id responseDic))success
+            failure:(void (^)(id errorString))failure;
+//媒体报道
+-(void)getMediaReports:(NSDictionary *)dataDic
+               success:(void (^)(id responseDic))success
+               failure:(void (^)(id errorString))failure;
+//行业动态
+-(void)getIndustryNews:(NSDictionary *)dataDic
+               success:(void (^)(id responseDic))success
+               failure:(void (^)(id errorString))failure;
+
+//不差钱
+-(void)GetWealthy:(NSDictionary *)dataDic
+          success:(void (^)(id responseDic))success
+          failure:(void (^)(id errorString))failure;
+
+//不差钱  资金明细
+-(void)GetWealthystatistical:(NSDictionary *)dataDic
+               success:(void (^)(id responseDic))success
+               failure:(void (^)(id errorString))failure;
+//不差钱   投资记录
+-(void)GetInvestmentHistory:(NSDictionary *)dataDic
+                     success:(void (^)(id responseDic))success
+                     failure:(void (^)(id errorString))failure;
+
+//申请提现
+-(void)ApplyToCash:(NSDictionary *)dataDic
+              success:(void (^)(id responseDic))success
+              failure:(void (^)(id errorString))failure;
+//个人信息
+-(void)GetUserInfo:(NSDictionary *)dataDic
+           success:(void (^)(id responseDic))success
+           failure:(void (^)(id errorString))failure;
+
+//查询个人信息
+-(void)ChaXunUserInfo:(NSDictionary *)dataDic
+              success:(void (^)(id responseDic))success
+              failure:(void (^)(id errorString))failure;
+
+//验证码
+-(void)YanZhengMa:(NSDictionary *)dataDic
+          success:(void (^)(id responseDic))success
+          failure:(void (^)(id errorString))failure;
+
+////保存个人信息
+//-(void)GetUserInfo:(NSDictionary *)dataDic
+//           success:(void (^)(id responseDic))success
+//           failure:(void (^)(id errorString))failure;
+
+
+//添加好友,发出好友申请
+-(void)AddFriendStatus:(NSDictionary *)dataDic
+               success:(void (^)(id responseDic))success
+               failure:(void (^)(id errorString))failure;
+
+// 获取省份、市
+-(void)ShengFen:(NSDictionary *)dataDic
+        success:(void (^)(id responseDic))success
+        failure:(void (^)(id errorString))failure;
+
+//绑定银行卡
+-(void)BindingBank:(NSDictionary *)dataDic
+           success:(void (^)(id responseDic))success
+           failure:(void (^)(id errorString))failure;
+
+//我的圈
+-(void)Friend:(NSDictionary *)dataDic
+           success:(void (^)(id responseDic))success
+           failure:(void (^)(id errorString))failure;
+
+//删除好友
+-(void)DeleteFriend:(NSDictionary *)dataDic
+            success:(void (^)(id responseDic))success
+            failure:(void (^)(id errorString))failure;
+
+//好友申请列表
+-(void)GetShenQinList:(NSDictionary *)dataDic
+                   success:(void (^)(id responseDic))success
+                   failure:(void (^)(id errorString))failure;
+//好友申请确认添加
+-(void)QueRenAddFriend:(NSDictionary *)dataDic
+               success:(void (^)(id responseDic))success
+               failure:(void (^)(id errorString))failure;
+
+//筛选  项目直投
+-(void)GetDirectInvestment:(NSDictionary *)dataDic
+      success:(void (^)(id responseDic))success
+      failure:(void (^)(id errorString))failure;
+
+//债权转让
+-(void)GetBondTransferList:(NSDictionary *)dataDic
+                   success:(void (^)(id responseDic))success
+                   failure:(void (^)(id errorString))failure;
+
+
+//项目明细
+-(void)GetProjectDetail:(NSDictionary *)dataDic
+                   success:(void (^)(id responseDic))success
+                   failure:(void (^)(id errorString))failure;
+
+//用户评论
+-(void)GetDetail:(NSDictionary *)dataDic
+         success:(void (^)(id responseDic))success
+         failure:(void (^)(id errorString))failure;
+
+
+//债券转让 项目明细
+-(void)GetProject1Detail:(NSDictionary *)dataDic
+                 success:(void (^)(id responseDic))success
+                 failure:(void (^)(id errorString))failure;
+
+//确认项目认购
+-(void)QueRenXiangMuRG:(NSDictionary *)dataDic
+               success:(void (^)(id responseDic))success
+               failure:(void (^)(id errorString))failure;
+
+//债券转让确认认购
+-(void)QueRenzhuaiquanRG:(NSDictionary *)dataDic
+                 success:(void (^)(id responseDic))success
+                 failure:(void (^)(id errorString))failure;
+
+
+//我的好友
+-(void)GetFriendList:(NSDictionary *)dataDic
+      success:(void (^)(id responseDic))success
+      failure:(void (^)(id errorString))failure;
+
+//我的文章
+-(void)GetMyArticle:(NSDictionary *)dataDic
+            success:(void (^)(id responseDic))success
+            failure:(void (^)(id errorString))failure;
+
+
+//群讨论
+-(void)GetArticleList:(NSDictionary *)dataDic
+              success:(void (^)(id responseDic))success
+              failure:(void (^)(id errorString))failure;
+
+//群讨论明细
+-(void)GetArticleDetail:(NSDictionary *)dataDic
+                success:(void (^)(id responseDic))success
+                failure:(void (^)(id errorString))failure;
+
+//文章点赞
+-(void)ArticlePraise:(NSDictionary *)dataDic
+             success:(void (^)(id responseDic))success
+             failure:(void (^)(id errorString))failure;
+
+
+//上传通讯录 添加好友
+-(void)AddingFriend:(NSDictionary *)dataDic
+             success:(void (^)(id responseDic))success
+             failure:(void (^)(id errorString))failure;
+
+//上摇一摇 添加好友
+-(void)AddYYUid:(NSDictionary *)dataDic
+            success:(void (^)(id responseDic))success
+            failure:(void (^)(id errorString))failure;
+
+//留言板
+-(void)GetMessageBoardList:(NSDictionary *)dataDic
+        success:(void (^)(id responseDic))success
+        failure:(void (^)(id errorString))failure;
+
+
+//留言板明明细
+-(void)GetMessageBoardInfo:(NSDictionary *)dataDic
+                   success:(void (^)(id responseDic))success
+                   failure:(void (^)(id errorString))failure;
+
+
+-(void)GetMessageBoardInfo1:(NSDictionary *)dataDic
+                   success:(void (^)(id responseDic))success
+                   failure:(void (^)(id errorString))failure;
+
+
+//站内信
+-(void)GetInnerMsg:(NSDictionary *)dataDic
+                   success:(void (^)(id responseDic))success
+                   failure:(void (^)(id errorString))failure;
+//站内信未读条数
+-(void)weiduMsg:(NSDictionary *)dataDic
+        success:(void (^)(id responseDic))success
+        failure:(void (^)(id errorString))failure;
+
+//站内信详情
+-(void)GetXiangQingMsg:(NSDictionary *)dataDic
+               success:(void (^)(id responseDic))success
+               failure:(void (^)(id errorString))failure;
+
+
+//登录
+-(void)Login:(NSDictionary *)dataDic
+     success:(void (^)(id responseDic))success
+     failure:(void (^)(id errorString))failure;
+
+//注册
+-(void)Reviser:(NSDictionary *)dataDic
+       success:(void (^)(id responseDic))success
+       failure:(void (^)(id errorString))failure;
+
+//注册的时候判断手机号是否已经注册
+-(void)PhonePanDuan:(NSDictionary *)dataDic
+            success:(void (^)(id responseDic))success
+            failure:(void (^)(id errorString))failure;
+
+
+//推荐人
+-(void)TuiJianReviser:(NSDictionary *)dataDic
+              success:(void (^)(id responseDic))success
+              failure:(void (^)(id errorString))failure;
+
+
+//短信验证码
+-(void)YanzhengRequest:(NSDictionary *)dataDic
+               success:(void (^)(id responseDic))success
+               failure:(void (^)(id errorString))failure;
+
+//短信验证码查看
+-(void)LookYanzheng:(NSDictionary *)dataDic
+            success:(void (^)(id responseDic))success
+            failure:(void (^)(id errorString))failure;
+
+//短信验证码
+-(void)YanRequest:(NSDictionary *)dataDic
+          success:(void (^)(id responseDic))success
+          failure:(void (^)(id errorString))failure;
+
+
+
+//修改密码
+-(void)ForgetPassWord:(NSDictionary *)dataDic
+              success:(void (^)(id responseDic))success
+              failure:(void (^)(id errorString))failure;
+
+
+//修改支付密码
+-(void)EdPassWprd:(NSDictionary *)dataDic
+          success:(void (^)(id responseDic))success
+          failure:(void (^)(id errorString))failure;
+
+//修改支付密码 EditPayPassword
+-(void)EdPayWprd:(NSDictionary *)dataDic
+         success:(void (^)(id responseDic))success
+         failure:(void (^)(id errorString))failure;
+
+//修改安全问题
+-(void)EdSafeQuestion:(NSDictionary *)dataDic
+              success:(void (^)(id responseDic))success
+              failure:(void (^)(id errorString))failure;
+
+//反馈
+-(void)FanKui:(NSDictionary *)dataDic
+      success:(void (^)(id responseDic))success
+      failure:(void (^)(id errorString))failure;
+
+//创建随手机
+-(void)CreateNote:(NSDictionary *)dataDic
+           success:(void (^)(id responseDic))success
+           failure:(void (^)(id errorString))failure;
+
+//随手机清单
+-(void)GetNodeList:(NSDictionary *)dataDic
+          success:(void (^)(id responseDic))success
+          failure:(void (^)(id errorString))failure;
+
+
+//随手机统计
+-(void)CountNode:(NSDictionary *)dataDic
+           success:(void (^)(id responseDic))success
+           failure:(void (^)(id errorString))failure;
+
+//投资冠军榜
+-(void)GetInverstRank:(NSDictionary *)dataDic
+         success:(void (^)(id responseDic))success
+         failure:(void (^)(id errorString))failure;
+
+
+//投资冠军好友榜
+-(void)GetInverRank:(NSDictionary *)dataDic
+            success:(void (^)(id responseDic))success
+            failure:(void (^)(id errorString))failure;
+
+
+//群讨论列表
+-(void)GetArticleListJson:(NSDictionary *)dataDic
+              success:(void (^)(id responseDic))success
+              failure:(void (^)(id errorString))failure;
+
+
+//帮助中心
+-(void)GetHelp:(NSDictionary *)dataDic
+                  success:(void (^)(id responseDic))success
+                  failure:(void (^)(id errorString))failure;
+
+//历史明细
+-(void)GetWealthyHistory:(NSDictionary *)dataDic
+       success:(void (^)(id responseDic))success
+       failure:(void (^)(id errorString))failure;
+
+
+//类型
+-(void)Request:(NSDictionary *)dataDic
+       success:(void (^)(id responseDic))success
+       failure:(void (^)(id errorString))failure;
+
+
+
+//项目直投认购
+-(void)zhitouRG:(NSDictionary *)dataDic
+        success:(void (^)(id responseDic))success
+        failure:(void (^)(id errorString))failure;
+
+//债券转让认购
+-(void)zhuaiquanRG:(NSDictionary *)dataDic
+           success:(void (^)(id responseDic))success
+           failure:(void (^)(id errorString))failure;
+
+
+
+//实名认证
+-(void)NameRequest:(NSDictionary *)dataDic
+           success:(void (^)(id responseDic))success
+           failure:(void (^)(id errorString))failure;
+
+
+//手机认证
+-(void)phoneNumRequest:(NSDictionary *)dataDic
+               success:(void (^)(id responseDic))success
+               failure:(void (^)(id errorString))failure;
+
+
+
+//添加好友
+-(void)AddingFriendList:(NSDictionary *)dataDic
+                success:(void (^)(id responseDic))success
+                failure:(void (^)(id errorString))failure;
+
+
+
+//发表用户评论
+-(void)FaBiaoContent:(NSDictionary *)dataDic
+             success:(void (^)(id responseDic))success
+             failure:(void (^)(id errorString))failure;
+
+
+//留言板信息
+-(void)PostMessage:(NSDictionary *)dataDic
+           success:(void (^)(id responseDic))success
+           failure:(void (^)(id errorString))failure;
+
+
+//帮助中心详细内容
+-(void)HelpContentRequest:(NSDictionary *)dataDic
+                  success:(void (^)(id responseDic))success
+                  failure:(void (^)(id errorString))failure;
+
+
+//隐私设置
+-(void)YinSiRequest:(NSDictionary *)dataDic
+            success:(void (^)(id responseDic))success
+            failure:(void (^)(id errorString))failure;
+
+
+//申请提现手续费
+-(void)TiXian:(NSDictionary *)dataDic
+      success:(void (^)(id responseDic))success
+      failure:(void (^)(id errorString))failure;
+
+//申请提现
+-(void)TiXianRequest:(NSDictionary *)dataDic
+             success:(void (^)(id responseDic))success
+             failure:(void (^)(id errorString))failure;
+
+-(void)ZhiFuState:(NSDictionary *)dataDic
+          success:(void (^)(id responseDic))success
+          failure:(void (^)(id errorString))failure;
+
+//债权转让协议
+-(void)ZhuaiQuanHeTong:(NSDictionary *)dataDic
+               success:(void (^)(id responseDic))success
+               failure:(void (^)(id errorString))failure;
+
+
+//借款协议个人
+-(void)GeRenHeTong:(NSDictionary *)dataDic
+           success:(void (^)(id responseDic))success
+           failure:(void (^)(id errorString))failure;
+
+
+//借款协议企业
+-(void)QiYeHeTongRequest:(NSDictionary *)dataDic
+                 success:(void (^)(id responseDic))success
+                 failure:(void (^)(id errorString))failure;
+
+
+
+
+
+@end

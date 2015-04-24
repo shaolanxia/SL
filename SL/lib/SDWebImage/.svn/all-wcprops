@@ -1,0 +1,203 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/customerAPP/!svn/ver/6/trunk/SHERPA'S/libarary/SDWebImage
+END
+MKAnnotationView+WebCache.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/customerAPP/!svn/ver/6/trunk/SHERPA'S/libarary/SDWebImage/MKAnnotationView+WebCache.h
+END
+SDImageCache.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/customerAPP/!svn/ver/6/trunk/SHERPA'S/libarary/SDWebImage/SDImageCache.h
+END
+SDWebImageDecoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/customerAPP/!svn/ver/6/trunk/SHERPA'S/libarary/SDWebImage/SDWebImageDecoder.h
+END
+MKAnnotationView+WebCache.m
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/customerAPP/!svn/ver/6/trunk/SHERPA'S/libarary/SDWebImage/MKAnnotationView+WebCache.m
+END
+SDImageCache.m
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/customerAPP/!svn/ver/6/trunk/SHERPA'S/libarary/SDWebImage/SDImageCache.m
+END
+SDWebImageDecoder.m
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/customerAPP/!svn/ver/6/trunk/SHERPA'S/libarary/SDWebImage/SDWebImageDecoder.m
+END
+SDWebImageManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/customerAPP/!svn/ver/6/trunk/SHERPA'S/libarary/SDWebImage/SDWebImageManager.h
+END
+UIButton+WebCache.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/customerAPP/!svn/ver/6/trunk/SHERPA'S/libarary/SDWebImage/UIButton+WebCache.h
+END
+SDWebImageDownloaderOperation.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/customerAPP/!svn/ver/6/trunk/SHERPA'S/libarary/SDWebImage/SDWebImageDownloaderOperation.h
+END
+SDWebImageManager.m
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/customerAPP/!svn/ver/6/trunk/SHERPA'S/libarary/SDWebImage/SDWebImageManager.m
+END
+UIImageView+WebCache.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/customerAPP/!svn/ver/6/trunk/SHERPA'S/libarary/SDWebImage/UIImageView+WebCache.h
+END
+UIImage+WebP.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/customerAPP/!svn/ver/6/trunk/SHERPA'S/libarary/SDWebImage/UIImage+WebP.h
+END
+UIButton+WebCache.m
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/customerAPP/!svn/ver/6/trunk/SHERPA'S/libarary/SDWebImage/UIButton+WebCache.m
+END
+SDWebImageDownloaderOperation.m
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/customerAPP/!svn/ver/6/trunk/SHERPA'S/libarary/SDWebImage/SDWebImageDownloaderOperation.m
+END
+UIImageView+WebCache.m
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/customerAPP/!svn/ver/6/trunk/SHERPA'S/libarary/SDWebImage/UIImageView+WebCache.m
+END
+UIImage+WebP.m
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/customerAPP/!svn/ver/6/trunk/SHERPA'S/libarary/SDWebImage/UIImage+WebP.m
+END
+NSData+ImageContentType.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/customerAPP/!svn/ver/6/trunk/SHERPA'S/libarary/SDWebImage/NSData+ImageContentType.h
+END
+UIView+WebCacheOperation.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/customerAPP/!svn/ver/6/trunk/SHERPA'S/libarary/SDWebImage/UIView+WebCacheOperation.h
+END
+SDWebImageDownloader.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/customerAPP/!svn/ver/6/trunk/SHERPA'S/libarary/SDWebImage/SDWebImageDownloader.h
+END
+NSData+ImageContentType.m
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/customerAPP/!svn/ver/6/trunk/SHERPA'S/libarary/SDWebImage/NSData+ImageContentType.m
+END
+SDWebImageDownloader.m
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/customerAPP/!svn/ver/6/trunk/SHERPA'S/libarary/SDWebImage/SDWebImageDownloader.m
+END
+UIView+WebCacheOperation.m
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/customerAPP/!svn/ver/6/trunk/SHERPA'S/libarary/SDWebImage/UIView+WebCacheOperation.m
+END
+UIImageView+HighlightedWebCache.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/customerAPP/!svn/ver/6/trunk/SHERPA'S/libarary/SDWebImage/UIImageView+HighlightedWebCache.h
+END
+SDWebImageCompat.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/customerAPP/!svn/ver/6/trunk/SHERPA'S/libarary/SDWebImage/SDWebImageCompat.h
+END
+UIImageView+HighlightedWebCache.m
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/customerAPP/!svn/ver/6/trunk/SHERPA'S/libarary/SDWebImage/UIImageView+HighlightedWebCache.m
+END
+UIImage+MultiFormat.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/customerAPP/!svn/ver/6/trunk/SHERPA'S/libarary/SDWebImage/UIImage+MultiFormat.h
+END
+SDWebImagePrefetcher.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/customerAPP/!svn/ver/6/trunk/SHERPA'S/libarary/SDWebImage/SDWebImagePrefetcher.h
+END
+SDWebImageCompat.m
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/customerAPP/!svn/ver/6/trunk/SHERPA'S/libarary/SDWebImage/SDWebImageCompat.m
+END
+UIImage+GIF.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/customerAPP/!svn/ver/6/trunk/SHERPA'S/libarary/SDWebImage/UIImage+GIF.h
+END
+UIImage+MultiFormat.m
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/customerAPP/!svn/ver/6/trunk/SHERPA'S/libarary/SDWebImage/UIImage+MultiFormat.m
+END
+SDWebImagePrefetcher.m
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/customerAPP/!svn/ver/6/trunk/SHERPA'S/libarary/SDWebImage/SDWebImagePrefetcher.m
+END
+UIImage+GIF.m
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/customerAPP/!svn/ver/6/trunk/SHERPA'S/libarary/SDWebImage/UIImage+GIF.m
+END
+SDWebImageOperation.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/customerAPP/!svn/ver/6/trunk/SHERPA'S/libarary/SDWebImage/SDWebImageOperation.h
+END

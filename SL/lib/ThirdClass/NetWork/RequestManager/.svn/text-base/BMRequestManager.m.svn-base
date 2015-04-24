@@ -1,0 +1,864 @@
+//
+//  BMRequestManager.m
+//  UnityLH
+//
+//  Created by apple on 13-5-28.
+//  Copyright (c) 2013年 UnityLH. All rights reserved.
+//
+
+#import "BMRequestManager.h"
+
+@implementation BMRequestManager
+
+static BMRequestManager *requesteManager;
+
++ (BMRequestManager*)shareBMRequestManager
+{
+    @synchronized(self)
+    {
+        if (requesteManager == nil) {
+            requesteManager = [[BMRequestManager alloc] init];
+        }
+    }
+    return requesteManager;
+}
+
+-(void)cleanRequest
+{
+    [request clearDelegatesAndCancel];
+}
+//注册
+-(void)registerUser:(NSDictionary *)dataDic
+        success:(void (^)(id responseDic))success
+        failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"Register";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+}
+//登陆
+-(void)loginUser:(NSDictionary *)dataDic
+            success:(void (^)(id responseDic))success
+            failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"Login";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+}
+//首页 /Advertisement/GetBondTransferList /Advertisement/GetBondTransferList
+-(void)homePage:(NSDictionary *)dataDic
+            success:(void (^)(id responseDic))success
+            failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"Advertisement/Index";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+}
+
+//首页  /Advertisement/GetBondTransferList
+-(void)homPage:(NSDictionary *)dataDic
+        success:(void (^)(id responseDic))success
+        failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/Advertisement/GetBondTransferList";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+}
+
+
+
+//债券转让
+-(void)zhaiquanRequest:(NSDictionary *)dataDic
+        success:(void (^)(id responseDic))success
+        failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/Advertisement/GetBondTransferList";///Advertisement/GetBondTransferList
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+}
+
+
+//项目直投
+-(void)zhitouRequest:(NSDictionary *)dataDic
+             success:(void (^)(id responseDic))success
+             failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/Advertisement/GetObjectDirectInvestmentList";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+}
+
+
+
+//公告
+-(void)Proclamation:(NSDictionary *)dataDic
+        success:(void (^)(id responseDic))success
+        failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"Article/GetAnnouncement";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+}
+//媒体报道
+-(void)getMediaReports:(NSDictionary *)dataDic
+            success:(void (^)(id responseDic))success
+            failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/Article/GetMediaReports";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+}
+//行业动态
+-(void)getIndustryNews:(NSDictionary *)dataDic
+               success:(void (^)(id responseDic))success
+               failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/Article/GetIndustryNews";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+}
+
+
+//不差钱
+-(void)GetWealthy:(NSDictionary *)dataDic
+                     success:(void (^)(id responseDic))success
+                     failure:(void (^)(id errorString))failure
+{
+    
+    NSString *interfaceName = @"/wealthy/GetWealthyInfo";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+    
+}
+
+
+
+//资金明细
+-(void)GetWealthystatistical:(NSDictionary *)dataDic
+                     success:(void (^)(id responseDic))success
+                     failure:(void (^)(id errorString))failure
+{
+    
+    NSString *interfaceName = @"Wealthy/GetWealthystatistical";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+    
+}
+
+
+//不差钱   投资记录
+-(void)GetInvestmentHistory:(NSDictionary *)dataDic
+                    success:(void (^)(id responseDic))success
+                    failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/Wealthy/GetInvestmentHistory";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+
+}
+
+
+
+//申请提现
+-(void)ApplyToCash:(NSDictionary *)dataDic
+           success:(void (^)(id responseDic))success
+           failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/wealthy/ApplyToCashInfo";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+
+}
+
+//个人信息
+-(void)GetUserInfo:(NSDictionary *)dataDic
+           success:(void (^)(id responseDic))success
+           failure:(void (^)(id errorString))failure
+{
+
+    NSString *interfaceName = @"/User/GetUserInfo";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+
+}
+
+//查询个人信息
+-(void)ChaXunUserInfo:(NSDictionary *)dataDic
+           success:(void (^)(id responseDic))success
+           failure:(void (^)(id errorString))failure
+{
+    
+    NSString *interfaceName = @"user/GetUserInfo";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+    
+}
+
+
+//留言板信息
+-(void)PostMessage:(NSDictionary *)dataDic
+           success:(void (^)(id responseDic))success
+           failure:(void (^)(id errorString))failure
+{
+    
+    NSString *interfaceName = @"/User/PostMessage";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+    
+}
+
+// 获取省份、市
+-(void)ShengFen:(NSDictionary *)dataDic
+           success:(void (^)(id responseDic))success
+           failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/wealthy/GetCity";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+}
+
+
+//绑定银行卡  
+-(void)BindingBank:(NSDictionary *)dataDic
+           success:(void (^)(id responseDic))success
+           failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/Wealthy/BindingBank";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+}
+
+//申请提现(手续费)
+-(void)TiXian:(NSDictionary *)dataDic
+           success:(void (^)(id responseDic))success
+           failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/wealthy/ApplyToCash";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+}
+
+//申请提现
+-(void)TiXianRequest:(NSDictionary *)dataDic
+      success:(void (^)(id responseDic))success
+      failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/Wealthy/ConfirmApplyToCash";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+}
+
+
+//支付密码状态
+-(void)ZhiFuState:(NSDictionary *)dataDic
+           success:(void (^)(id responseDic))success
+           failure:(void (^)(id errorString))failure
+{
+    
+    NSString *interfaceName = @"/User/GetUserPinPassStatus";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+    
+}
+
+
+//我的圈
+-(void)Friend:(NSDictionary *)dataDic
+      success:(void (^)(id responseDic))success
+      failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/User/Friend";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+
+}
+
+
+//删除好友
+-(void)DeleteFriend:(NSDictionary *)dataDic
+            success:(void (^)(id responseDic))success
+            failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/User/DeleteFriend";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+    
+}
+
+
+//筛选  项目直投
+-(void)GetDirectInvestment:(NSDictionary *)dataDic
+                   success:(void (^)(id responseDic))success
+                   failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/Advertisement/GetObjectDirectInvestmentList";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+
+
+
+}
+
+
+//债权转让
+-(void)GetBondTransferList:(NSDictionary *)dataDic
+                   success:(void (^)(id responseDic))success
+                   failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/Advertisement/GetBondTransferList";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+}
+
+//项目明细
+-(void)GetProjectDetail:(NSDictionary *)dataDic
+                success:(void (^)(id responseDic))success
+                failure:(void (^)(id errorString))failure
+{
+
+    NSString *interfaceName = @"/Project/GetProjectDetail";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+
+}
+
+
+//用户评论
+-(void)GetDetail:(NSDictionary *)dataDic
+                success:(void (^)(id responseDic))success
+                failure:(void (^)(id errorString))failure
+{
+    
+    NSString *interfaceName = @"/Project/GetComment";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+    
+}
+
+
+//债券转让 项目明细
+-(void)GetProject1Detail:(NSDictionary *)dataDic
+                success:(void (^)(id responseDic))success
+                failure:(void (^)(id errorString))failure
+{
+    
+    NSString *interfaceName = @"/project/GetBondDetail";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+    
+}
+
+
+//债权转让协议
+-(void)ZhuaiQuanHeTong:(NSDictionary *)dataDic
+                success:(void (^)(id responseDic))success
+                failure:(void (^)(id errorString))failure
+{
+    
+    NSString *interfaceName = @"/project/GetDebt";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+    
+}
+
+//借款协议个人
+-(void)GeRenHeTong:(NSDictionary *)dataDic
+               success:(void (^)(id responseDic))success
+               failure:(void (^)(id errorString))failure
+{
+    
+    NSString *interfaceName = @"/project/GetTransferPeople";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+    
+}
+
+//借款协议企业
+-(void)QiYeHeTongRequest:(NSDictionary *)dataDic
+           success:(void (^)(id responseDic))success
+           failure:(void (^)(id errorString))failure
+{
+    
+    NSString *interfaceName = @"/project/GetTransferQiye";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+    
+}
+
+
+
+
+//我的好友
+-(void)GetFriendList:(NSDictionary *)dataDic
+             success:(void (^)(id responseDic))success
+             failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/User/GetFriendList";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+}
+
+
+//添加好友 /User/GetFriendStatus
+-(void)AddingFriendList:(NSDictionary *)dataDic
+             success:(void (^)(id responseDic))success
+             failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/User/AddingFriend";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+}
+
+//添加好友,发出好友申请/User/ConfirmAddFriend
+-(void)AddFriendStatus:(NSDictionary *)dataDic
+                success:(void (^)(id responseDic))success
+                failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/User/AddFriend";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+}
+
+//好友申请确认添加
+-(void)QueRenAddFriend:(NSDictionary *)dataDic
+               success:(void (^)(id responseDic))success
+               failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/User/ConfirmAddFriend";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+}
+
+
+
+//我的文章
+-(void)GetMyArticle:(NSDictionary *)dataDic
+             success:(void (^)(id responseDic))success
+             failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/User/GetMyArticle";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+    
+    
+}
+
+//群讨论  GetArticleDetail
+-(void)GetArticleList:(NSDictionary *)dataDic
+            success:(void (^)(id responseDic))success
+            failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/User/GetArticleListJson";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+}
+
+//群讨论明细
+-(void)GetArticleDetail:(NSDictionary *)dataDic
+              success:(void (^)(id responseDic))success
+              failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/User/GetArticleDetail";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+}
+
+
+//文章点赞
+-(void)ArticlePraise:(NSDictionary *)dataDic
+                success:(void (^)(id responseDic))success
+                failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/User/ArticlePraise";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+}
+
+//好友申请列表
+-(void)GetShenQinList:(NSDictionary *)dataDic
+                   success:(void (^)(id responseDic))success
+                   failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/User/GetFriendAddingList";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+}
+
+
+
+//上传通讯录 添加好友
+-(void)AddingFriend:(NSDictionary *)dataDic
+            success:(void (^)(id responseDic))success
+            failure:(void (^)(id errorString))failure
+{
+
+    NSString *interfaceName = @"/User/AddingFriend";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+
+}
+
+
+//上摇一摇 添加好友
+-(void)AddYYUid:(NSDictionary *)dataDic
+        success:(void (^)(id responseDic))success
+        failure:(void (^)(id errorString))failure
+{
+
+    NSString *interfaceName = @"/User/AddYYUid";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+
+}
+
+//留言板
+-(void)GetMessageBoardList:(NSDictionary *)dataDic
+                   success:(void (^)(id responseDic))success
+                   failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/User/GetMessageBoardList";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+}
+
+//留言板明明细
+-(void)GetMessageBoardInfo:(NSDictionary *)dataDic
+                   success:(void (^)(id responseDic))success
+                   failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/User/GetMessageBoardInfo";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+
+}
+
+-(void)GetMessageBoardInfo1:(NSDictionary *)dataDic
+                   success:(void (^)(id responseDic))success
+                   failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/User/GetMessageBoardInfo";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+    
+}
+
+
+
+//站内信
+-(void)GetInnerMsg:(NSDictionary *)dataDic
+           success:(void (^)(id responseDic))success
+           failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"User/GetInnerMsg";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+}
+
+//站内信未读条数
+-(void)weiduMsg:(NSDictionary *)dataDic
+           success:(void (^)(id responseDic))success
+           failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"User/GetUserMsgCount";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+}
+
+//站内信详情
+-(void)GetXiangQingMsg:(NSDictionary *)dataDic
+           success:(void (^)(id responseDic))success
+           failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"User/GetInnerMsgInfo";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+}
+
+
+
+//登录
+-(void)Login:(NSDictionary *)dataDic
+      success:(void (^)(id responseDic))success
+      failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/User/Login";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+    
+}
+
+//验证码
+-(void)YanZhengMa:(NSDictionary *)dataDic
+     success:(void (^)(id responseDic))success
+     failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/User/GetImgCode";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+    
+}
+
+//注册的时候判断手机号是否已经注册
+-(void)PhonePanDuan:(NSDictionary *)dataDic
+          success:(void (^)(id responseDic))success
+          failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/user/JudgePhone";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+    
+}
+
+
+//注册
+-(void)Reviser:(NSDictionary *)dataDic
+     success:(void (^)(id responseDic))success
+     failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/User/Register";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+    
+}
+
+//推荐人
+-(void)TuiJianReviser:(NSDictionary *)dataDic
+       success:(void (^)(id responseDic))success
+       failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/user/Referrer";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+    
+}
+
+//短信验证码
+-(void)YanzhengRequest:(NSDictionary *)dataDic
+       success:(void (^)(id responseDic))success
+       failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/User/SendMsg";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+    
+}
+
+
+//短信验证码查看
+-(void)LookYanzheng:(NSDictionary *)dataDic
+               success:(void (^)(id responseDic))success
+               failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/user/checkcodelist";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+    
+}
+
+
+
+//短信验证码
+-(void)YanRequest:(NSDictionary *)dataDic
+               success:(void (^)(id responseDic))success
+               failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/User/MatchCheckCode";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+    
+}
+
+
+
+//修改密码 
+-(void)ForgetPassWord:(NSDictionary *)dataDic
+       success:(void (^)(id responseDic))success
+       failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/User/ForgetPassword";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+    
+}
+
+//修改安全中心登陆密码 NameAuthority
+-(void)EdPassWprd:(NSDictionary *)dataDic
+            success:(void (^)(id responseDic))success
+            failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/User/EditPassword";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+    
+}
+
+//修改支付密码 EditPayPassword
+-(void)EdPayWprd:(NSDictionary *)dataDic
+          success:(void (^)(id responseDic))success
+          failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/User/EditPayPassword";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+    
+}
+
+
+//修改安全问题
+-(void)EdSafeQuestion:(NSDictionary *)dataDic
+          success:(void (^)(id responseDic))success
+          failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/User/EditSafeQuestion";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+    
+}
+
+
+//反馈
+-(void)FanKui:(NSDictionary *)dataDic
+       success:(void (^)(id responseDic))success
+       failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/User/SubmitFaceback";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+    
+}
+
+
+
+//创建随手记
+-(void)CreateNote:(NSDictionary *)dataDic
+          success:(void (^)(id responseDic))success
+          failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/User/CreateNote";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+}
+
+//随手机清单
+-(void)GetNodeList:(NSDictionary *)dataDic
+           success:(void (^)(id responseDic))success
+           failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/User/GetNodeList";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+
+
+}
+
+//随手记统计
+-(void)CountNode:(NSDictionary *)dataDic
+         success:(void (^)(id responseDic))success
+         failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/User/CountNode";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+}
+
+
+//投资冠军榜
+-(void)GetInverstRank:(NSDictionary *)dataDic
+              success:(void (^)(id responseDic))success
+              failure:(void (^)(id errorString))failure
+{
+
+    NSString *interfaceName = @"/project/GetInverstRank";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+
+}
+
+
+//投资冠军好友榜
+-(void)GetInverRank:(NSDictionary *)dataDic
+              success:(void (^)(id responseDic))success
+              failure:(void (^)(id errorString))failure
+{
+    
+    NSString *interfaceName = @"/project/GetInverstFriendRank";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+    
+}
+
+
+//群讨论列表
+-(void)GetArticleListJson:(NSDictionary *)dataDic
+                  success:(void (^)(id responseDic))success
+                  failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/user/GetArticleListJson";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+
+}
+
+
+//帮助中心
+-(void)GetHelp:(NSDictionary *)dataDic
+       success:(void (^)(id responseDic))success
+       failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/User/GetHelp";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+
+}
+
+
+//历史明细
+-(void)GetWealthyHistory:(NSDictionary *)dataDic
+                 success:(void (^)(id responseDic))success
+                 failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/Wealthy/GetWealthyHistory";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+
+}
+
+//类型
+-(void)Request:(NSDictionary *)dataDic
+                 success:(void (^)(id responseDic))success
+                 failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/wealthy/gettypelist";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+    
+}
+
+//项目直投认购
+-(void)zhitouRG:(NSDictionary *)dataDic
+          success:(void (^)(id responseDic))success
+          failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/Project/GetDirectBuyInfo";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+    
+}
+
+//债券转让认购
+-(void)zhuaiquanRG:(NSDictionary *)dataDic
+        success:(void (^)(id responseDic))success
+        failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/Project/GetBondInfo";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+    
+}
+
+
+//确认项目认购
+-(void)QueRenXiangMuRG:(NSDictionary *)dataDic
+        success:(void (^)(id responseDic))success
+        failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/Project/ProjectSubscription";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+    
+}
+
+
+//债券转让确认认购
+-(void)QueRenzhuaiquanRG:(NSDictionary *)dataDic
+           success:(void (^)(id responseDic))success
+           failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/Project/BondSubscription";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+    
+}
+
+
+
+
+//实名认证
+-(void)NameRequest:(NSDictionary *)dataDic
+          success:(void (^)(id responseDic))success
+          failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/User/NameAuthority";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+    
+}
+
+//手机认证
+-(void)phoneNumRequest:(NSDictionary *)dataDic
+           success:(void (^)(id responseDic))success
+           failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/User/PhoneAuthority";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+    
+}
+
+//发表用户评论
+-(void)FaBiaoContent:(NSDictionary *)dataDic
+              success:(void (^)(id responseDic))success
+              failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/Project/AddComment";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+    
+}
+
+//帮助中心详细内容
+-(void)HelpContentRequest:(NSDictionary *)dataDic
+           success:(void (^)(id responseDic))success
+           failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/User/GetHelpDetail";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+    
+}
+
+//隐私设置
+-(void)YinSiRequest:(NSDictionary *)dataDic
+               success:(void (^)(id responseDic))success
+               failure:(void (^)(id errorString))failure
+{
+    NSString *interfaceName = @"/user/UserPrivacy";
+    [self postRequestWithAction:interfaceName params:dataDic hasSession:NO success:success failure:failure];
+    
+}
+
+
+
+@end
